@@ -1,0 +1,24 @@
+
+
+
+/*
+.quizCard{
+    background-color: lightblue;
+    text-align: center;
+    border: 10px solid purple;
+    padding: 10px
+}
+
+.welcomeCard{
+    display: none;
+}
+*/
+
+.welcomeCard{
+  
+}
+
+.button{
+    display:block;
+    margin-bottom: 10px;
+}
