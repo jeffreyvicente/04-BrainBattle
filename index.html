@@ -9,70 +9,89 @@
 </head>
 
 <body>
+    <!--
     <div>
         <h3>View High Scores</h3>
         <h3>Time:</h3>
-    </div>
-
-    <section >
-    <div class="welcomeCard">
-        <p>temp paragraph</p>
-        <div class = cardBody>
-            <h2>Coding Quiz Challenge</h2>
-            <p> Try to answer the following code-related questions within the time limit. <br>
-                Keep in mind that incorrect answers will penalize your score/time <br>
-                by ten seconds!
-            </p>
-            <div>
-                <button class = "btn" id="start-button"> Begin Battle </button>
-            </div>
+    </div>-->
+<header>
+    <div class="navBar">
+        <div class = "left">
+        <li><a class="text1" href="#">View high scores</a></li>
+             
+        </div>
+        <div class = "right">
+            <li><a class="text1" href="#">Time 100</a></li>
 
 
         </div>
     </div>
+</header>
+
+    <section class = "gameSection-1" >
+        <div class= "gameCard">
+            <p></p>
+            <div class = "welcomeCard">
+                <h2>Coding Quiz Challenge</h2>
+                <p> Try to answer the following code-related questions within the time limit. <br>
+                    Keep in mind that incorrect answers will penalize your score/time <br>
+                    by ten seconds!
+                </p>
+                <div>
+                    <button class = "btn" id="start-button"> Begin Battle </button>
+                </div>
+
+
+            </div>
+        </div>
     </section>
-    
-    <div class="quizCard">      
-        <div class = cardBody>
-            <h3>Question #1</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita iure illum nemo quis molestias vel corporis, 
-                <br>culpa itaque explicabo corrupti eaque quae dolorum tempora est? Optio quia aliquam dolorem esse?</p>
-            <button class = "btn" id="answer-button-01"> Answer #1 </button>
-            <button class = "btn" id="answer-button-02"> Answer #2 </button>
-            <button class = "btn" id="answer-button-03"> Answer #3 </button>
-            <button class = "btn" id="answer-button-04"> Answer #4 </button>
-        </div>         
-    </div>
 
-    <div class="scoreCard">      
-        <div class = cardBody>
-            <h3>Battle Completed!</h3>
-            <p>Your final score is null.</p>
-            
-            <p>Enter initials: </p>
-            <input type="text" placeholder="Enter Name Here" id="nameField">
-            <button class = "btn" id="nameFieldBtn"> Submit</button>
-            
-        </div>         
-    </div>
+    <section class = "gameSection-2">
+        <div class="gameCard">      
+            <div class = "QuestionCard">
+                <h3 class>Question #1</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita iure illum nemo quis molestias vel corporis, 
+                    <br>culpa itaque explicabo corrupti eaque quae dolorum tempora est? Optio quia aliquam dolorem esse?</p>
+                <button class = "btn" id="answer-button-01"> Answer #1 </button>
+                <button class = "btn" id="answer-button-02"> Answer #2 </button>
+                <button class = "btn" id="answer-button-03"> Answer #3 </button>
+                <button class = "btn" id="answer-button-04"> Answer #4 </button>
+            </div>         
+        </div>
+    </section>
 
+    <section class = "gameSection-3">
+        <div class="gameCard">      
+            <div class = "scoreCard">
+                <h3>Battle Completed!</h3>
+                <p>Your final score is null.</p>
+                
+                <p>Enter initials: </p>
+                <input type="text" placeholder="Enter Name Here" id="nameField">
+                <button class = "btn" id="nameFieldBtn"> Submit</button>
+                
+            </div>         
+        </div>
+    </section>
 
-    <div class="leaderboardCard">      
-        <div class = cardBody>
-            <h3>Battle High Scores!</h3>
-            <p>Name SCORE</p>
-            
-            <button class = "btn" id="playAgainBtn"> Battle Again?</button>
-            
-        </div>         
-    </div>
+    <section class = "gameSection-4">
+        <div class="gameCard">      
+            <div class = "leaderboardCard">
+                <h3>Battle High Scores!</h3>
+                <p>Name SCORE</p>
+                
+                <button class = "btn" id="playAgainBtn"> Battle Again?</button>
+                
+            </div>         
+        </div>
+    </section>
 
-
+    <script src="./scripts/script.js"></script>
+</body>
 
     
  
 
-</body>
 
 <footer>
 

@@ -1,6 +1,46 @@
+/*
+12-STU used for page layout 
+
+*/
+
+header {
+
+    height: 50px;
+    width: 100vw;
+    background-color: lightblue;
+  }
+
+.navBar {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+ 
+    height: 100%;
+    align-items: center;
+  }
+
+.left {
+    text-align: center;
+    display: flex;
+  }
+  
+  .right {
+    position: absolute;
+    right: 20px;
+    text-align: left;
+  }
 
 
+  li {
+    list-style: none;
+  }
 
+  .navBar .text1 {
+    color: black;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-size: 20px;
+  }
 /*
 .quizCard{
     background-color: lightblue;
@@ -9,16 +49,63 @@
     padding: 10px
 }
 
-.welcomeCard{
+.welcomeCard{ 
+    display: none;
+}
+
+
+.gameSection-2,.gameSection-3, .gameSection-4{ 
     display: none;
 }
 */
-
-.welcomeCard{
-  
-}
-
 .button{
     display:block;
     margin-bottom: 10px;
 }
+/* New code here */
+
+/* Sets the headers to align to the middle of the page 
+ section h3 {
+    text-align: center;
+
+}*/
+/* Setts the button CSS Attributes*/
+
+body {
+    background-color: #eff5f8
+  }
+section button {
+    color: white;
+    background-color: #247BA0;
+    cursor: pointer;
+    padding: 10px;
+    margin: 10px;
+    font-size: 20px;
+}
+
+.gameCard{
+    display: block;
+    background-color: #f0ead6;
+    text-align: center;
+    width: 60vw;
+    margin: 80px auto;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,.5);
+    padding: 5px 5px 10px 5px;
+
+}
+
+.section {
+    padding-top: 20px;
+  }
+  
+  .card-contents {
+    padding: 5px 5px 10px 5px;
+  }
+
+  #nameField {
+    width: 30%;
+    padding: 12px 10px;
+    margin: 8px 8px;
+    box-sizing: border-box;
+    font-size: 18px;
+  }
