@@ -174,6 +174,9 @@ function setAnswerA(){
     currentQuestion++;
     scoreCounter++;
     quizLogic();
+  }else{
+    currentQuestion++
+    quizLogic();
   }
 
 }
@@ -187,6 +190,9 @@ function setAnswerB(){
     currentQuestion++;
     scoreCounter++;
     quizLogic();
+  }else{
+    currentQuestion++;
+    quizLogic();
   }
   
 }
@@ -196,9 +202,12 @@ function setAnswerC(){
   console.log("This is the correct answer value: " + correctAnswer);
   if (correctAnswer == selectedAnswer)
   {
-    console.log("The value goes into the loop");
+    console.log("Correct answer was selected");
     currentQuestion++;
     scoreCounter++;
+    quizLogic();
+  }else{
+    currentQuestion++;
     quizLogic();
   }
 }
@@ -213,5 +222,7 @@ function setAnswerD(){
     scoreCounter++;
     quizLogic();
   }
+    currentQuestion++;
+    quizLogic();
 }
 
