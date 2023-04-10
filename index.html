@@ -17,11 +17,11 @@
 <header>
     <div class="navBar">
         <div class = "left">
-        <li><a class="text1" href="#">View high scores</a></li>
+        <li><a class="text1" href ="javascript:void(0);" onclick="showLeaderBoard();" >View high scores</a></li>
              
         </div>
         <div class = "right">
-            <li><a class="text1" href="#">Time 100</a></li>
+            <li><a class="text1" >Time 100</a></li>
 
 
         </div>
@@ -78,15 +78,18 @@
         <div class="gameCard">      
             <div class = "leaderboardCard">
                 <h3>Battle High Scores!</h3>
-                <p>Name SCORE</p>
-                
+               
+                <ul id="leaderboardCardList"></ul>
+
+
                 <button class = "btn" id="playAgainBtn"> Battle Again?</button>
                 
             </div>         
         </div>
     </section>
 
-   <!--<script src="./scripts/script.js"></script>--> 
+
+   <script src="./scripts/script.js"></script>
 </body>
 
     

@@ -16,10 +16,13 @@ var gameSection04 = document.querySelector(".gameSection-4");
 var questionField = document.querySelector("#questionField");
 var questionNumber = document.querySelector("#questionNumber");
 
+var highScoreName = document.querySelector("#nameField");
+
 gameSection02.style.display = "none";
 gameSection03.style.display = "none";
 gameSection04.style.display = "none";
 
+var savedHighScores = [];
 
 var currentQuestion = 0;
 var scoreCounter = 0;
@@ -140,11 +143,35 @@ function showScore(){
     document.getElementById("scoreField").innerHTML = "Your final score is: " + scoreCounter;
 }
 
+
+
+
 function showLeaderBoard(){
-    gameSection03.style.display = "none";
-    gameSection04.style.display = "";
-   
+  gameSection01.style.display = "none";
+
+  var highScores = {
+    playerName: highScoreName.value,
+    score: scoreCounter
+  };
+  
+
+  savedHighScores.push(highScores)
+
+  localStorage.setItem("savedHighscores", JSON.stringify(savedHighScores));
+
+
+
+  gameSection03.style.display = "none";
+  gameSection04.style.display = "";
+
+
+
+  //storeTodos();
+  renderTodos();
 }
+
+
+
 
 function gameReset(){
     gameSection01.style.display = ""
@@ -226,3 +253,36 @@ function setAnswerD(){
     quizLogic();
 }
 
+
+function storeTodos() {
+  // Stringify and set key in localStorage to todos array
+  localStorage.setItem("names", JSON.stringify(nameArray));
+  localStorage.setItem("scores", JSON.stringify(scoreArray));
+}
+//26 STU
+var todoList = document.querySelector("#leaderboardCardList");
+
+
+// The following function renders items in a todo list as <li> elements
+
+function renderTodos() {
+  // Clear todoList element and update todoCountSpan
+  todoList.innerHTML = "";
+  //todoCountSpan.textContent = todos.length;
+
+  // Render a new li for each todo
+  for (var i = 0; i < savedHighScores.length; i++) {
+    var todo = savedHighScores[i].playerName;
+    var score2 = savedHighScores[i].score;
+
+    var li = document.createElement("li");
+    li.textContent = todo + " ........................  " + score2;
+    li.setAttribute("data-index", i);
+
+    //var button = document.createElement("p");
+    //button.textContent = scoreArray[i];
+
+    //li.appendChild(button);
+    todoList.appendChild(li);
+  }
+}
