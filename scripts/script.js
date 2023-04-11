@@ -17,6 +17,7 @@ var questionField = document.querySelector("#questionField");
 var questionNumber = document.querySelector("#questionNumber");
 
 var highScoreName = document.querySelector("#nameField");
+var leaderboardCardList = document.querySelector("#leaderboardCardList");
 
 gameSection02.style.display = "none";
 gameSection03.style.display = "none";
@@ -254,35 +255,31 @@ function setAnswerD(){
 }
 
 
-function storeTodos() {
-  // Stringify and set key in localStorage to todos array
-  localStorage.setItem("names", JSON.stringify(nameArray));
-  localStorage.setItem("scores", JSON.stringify(scoreArray));
-}
+
 //26 STU
-var todoList = document.querySelector("#leaderboardCardList");
+
 
 
 // The following function renders items in a todo list as <li> elements
 
 function renderTodos() {
   // Clear todoList element and update todoCountSpan
-  todoList.innerHTML = "";
+  leaderboardCardList.innerHTML = "";
   //todoCountSpan.textContent = todos.length;
 
   // Render a new li for each todo
   for (var i = 0; i < savedHighScores.length; i++) {
-    var todo = savedHighScores[i].playerName;
-    var score2 = savedHighScores[i].score;
+    var nameTwo = savedHighScores[i].playerName;
+    var scoreTwo = savedHighScores[i].score;
 
     var li = document.createElement("li");
-    li.textContent = todo + " ........................  " + score2;
+    li.textContent = nameTwo + " ........................  " + scoreTwo;
     li.setAttribute("data-index", i);
 
     //var button = document.createElement("p");
     //button.textContent = scoreArray[i];
 
     //li.appendChild(button);
-    todoList.appendChild(li);
+    leaderboardCardList.appendChild(li);
   }
 }
