@@ -1,22 +1,44 @@
-/*
-12-STU used for page layout 
+:root{
+  --primary-font:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
 
-*/
+* {
+  box-sizing: border-box;  
+  margin: 0;
+  padding: 0;
+ 
+}
+
+body {
+  height: 100%;
+  font-family: var(--primary-font);
+ 
+}
 
 header {
 
-    height: 50px;
+    height: 75px;
     width: 100vw;
-    background-color: lightblue;
+    background-color: #acdae2;
+    font-family: var(--primary-font);
+    
   }
 
 .navBar {
     overflow: hidden;
     position: relative;
     display: flex;
- 
     height: 100%;
     align-items: center;
+  
+  }
+
+  .navBar .text1 {
+    color: white;
+    padding: 15px 35px;
+    text-decoration: none;
+    font-size: 30px;
+    font-weight: bold;
   }
 
 .left {
@@ -35,44 +57,11 @@ header {
     list-style: none;
   }
 
-  .navBar .text1 {
-    color: black;
-    padding: 15px 35px;
-    text-decoration: none;
-    font-size: 20px;
-  }
-/*
-.quizCard{
-    background-color: lightblue;
-    text-align: center;
-    border: 10px solid purple;
-    padding: 10px
-}
-
-.welcomeCard{ 
-    display: none;
-}
 
 
-.gameSection-2,.gameSection-3, .gameSection-4{ 
-    display: none;
-}
-*/
-.button{
-    display:block;
-    margin-bottom: 10px;
-}
-/* New code here */
-
-/* Sets the headers to align to the middle of the page 
- section h3 {
-    text-align: center;
-
-}*/
-/* Setts the button CSS Attributes*/
 
 body {
-    background-color: #eff5f8
+    background-color:white;
   }
 section button {
     color: white;
@@ -81,19 +70,20 @@ section button {
     padding: 10px;
     margin: 10px;
     font-size: 20px;
+    width: 40%;
 }
 
 .gameCard{
     display: block;
-    background-color: #f0ead6;
+    background-color:#f0ead6;
     text-align: center;
     width: 60vw;
     margin: 80px auto;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,.5);
     padding: 5px 5px 10px 5px;
+    border: 5px solid #f19c73;
 
 }
-
 .section {
     padding-top: 20px;
   }
@@ -108,4 +98,20 @@ section button {
     margin: 8px 8px;
     box-sizing: border-box;
     font-size: 18px;
+  }
+
+  h2,h3,p,li{
+    padding-bottom: 20px;
+  }
+
+  p,ul{
+    font-size: 20px;
+  }
+
+  h3{
+    font-size: 30px;
+  }
+
+  h2{
+    font-size: 35px;
   }

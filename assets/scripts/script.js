@@ -297,7 +297,7 @@ function renderTodos() {
     var scoreTwo = savedHighScores[i].score;
 
     var li = document.createElement("li");
-    li.textContent = nameTwo + " ........................  " + scoreTwo;
+    li.textContent = nameTwo + " ........................  " + scoreTwo + " points";
     li.setAttribute("data-index", i);
 
     //var button = document.createElement("p");

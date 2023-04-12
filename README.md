@@ -52,7 +52,7 @@ THEN I can save my initials and score
 
 ## Mock-up
 
-![alt text](/images/04-web-apis-homework-demo.gif)
+![alt text](/assets/images/04-web-apis-homework-demo.gif)
 
 ## Preview
 
