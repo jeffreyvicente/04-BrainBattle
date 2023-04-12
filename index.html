@@ -17,11 +17,11 @@
 <header>
     <div class="navBar">
         <div class = "left">
-        <li><a class="text1" href ="javascript:void(0);" onclick="showLeaderBoard();" >View high scores</a></li>
+        <li><a class="text1" href ="javascript:void(0);" onclick="showLeaderBoard();" id="highBtnHeader" >View high scores</a></li>
              
         </div>
         <div class = "right">
-            <li><a class="text1" >Time 100</a></li>
+            <li><a class="text1"; id="countdownTimer">Hello 😬</a></li>
 
 
         </div>
@@ -52,10 +52,17 @@
                 <h3 id = "questionNumber">Question #1</h3>
                 <p id="questionField">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita iure illum nemo quis molestias vel corporis, 
                     <br>culpa itaque explicabo corrupti eaque quae dolorum tempora est? Optio quia aliquam dolorem esse?</p>
-                <button class = "btn" id="answer-button-01"> Answer #1 </button>
-                <button class = "btn" id="answer-button-02"> Answer #2 </button>
-                <button class = "btn" id="answer-button-03"> Answer #3 </button>
-                <button class = "btn" id="answer-button-04"> Answer #4 </button>
+                <div>
+                    <button class = "btn" id="answer-button-01"> Answer #1 </button>
+                    <button class = "btn" id="answer-button-02"> Answer #2 </button>
+                </div>
+                <div>
+                    <button class = "btn" id="answer-button-03"> Answer #3 </button>
+                    <button class = "btn" id="answer-button-04"> Answer #4 </button>
+
+                </div>
+                <hr>
+                <h3 id="questionNotification"></h3>
             </div>         
         </div>
     </section>

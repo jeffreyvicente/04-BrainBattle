@@ -2,11 +2,11 @@
 
 ## Description
 
-Brain Battle 🧠⚔️ will present a series of multiple-choice questions to the user. Each question will have a set amount of time to answer, and the user will earn points based on their speed and accuracy. Once the quiz is complete, the user will see their score and have the option to submit it to the high score list.
+Brain Battle will present a series of multiple-choice questions to the user. Each question will have a set amount of time to answer, and the user will earn points based on their speed and accuracy. Once the quiz is complete, the user will see their score and have the option to submit it to the high score list.
 
 The leaderboard will show the top scores of all users who have taken the quiz. Players can view their own score on the list and compare it to their peers. 
 
-Brain Battle 🧠⚔️ will be an interactive and engaging way for users to test their knowledge, track their progress, and compete with their peers.
+Brain Battle will be an interactive and engaging way for users to test their knowledge, track their progress, and compete with their peers.
 
 ## Table of Contents
 

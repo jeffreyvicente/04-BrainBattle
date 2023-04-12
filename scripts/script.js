@@ -18,64 +18,67 @@ var questionNumber = document.querySelector("#questionNumber");
 
 var highScoreName = document.querySelector("#nameField");
 var leaderboardCardList = document.querySelector("#leaderboardCardList");
+var headerBtn = document.querySelector("#highBtnHeader");
 
-gameSection02.style.display = "none";
-gameSection03.style.display = "none";
-gameSection04.style.display = "none";
+var countdownText = document.getElementById('countdownTimer');
+var questionNotification = document.getElementById('questionNotification');
 
 var savedHighScores = [];
 
 var currentQuestion = 0;
 var scoreCounter = 0;
+var timeLeft = 100;
+var timeInterval;
 
+gameReset();
 //Code from the 25 INS sections
 var questionBank = [
   {
     question: "What does the DOM stand for in JavaScript?",
-    option01: "Document Object Model",
-    option02: "Data Object Model",
-    option03: "Dynamic Object Model",
-    option04: "Display Object Model",
+    option01: "A. Document Object Model",
+    option02: "B. Data Object Model",
+    option03: "C. Dynamic Object Model",
+    option04: "D. Display Object Model",
     answer:"A"
   },
   {
     question: "What keyword is used to declare a variable in JavaScript??",
-    option01: "let",
-    option02: "var",
-    option03: "const",
-    option04: "all of the above",
+    option01: "A. let",
+    option02: "B. var",
+    option03: "C. const",
+    option04: "D. all of the above",
     answer:"D"
   },
   {
     question: "What is the difference between == and === in JavaScript?",
-    option01: "== compares values but not types, while === compares both values and types",
-    option02: "== compares types but not values, while === compares both types and values",
-    option03: "== and === are interchangeable and have no difference",
-    option04: "none of the above",
+    option01: "A. == compares values but not types, while === compares both values and types",
+    option02: "B. == compares types but not values, while === compares both types and values",
+    option03: "C. == and === are interchangeable and have no difference",
+    option04: "D. none of the above",
     answer:"A"
   },
   {
     question: "Which of the following is not a valid loop in JavaScript?",
-    option01: "for",
-    option02: "while",
-    option03: "until",
-    option04: "do-while",
+    option01: "A. for",
+    option02: "B while",
+    option03: "C. until",
+    option04: "D. do-while",
     answer:"C"
   },
   {
     question: "What is the correct syntax for a function declaration in JavaScript?",
-    option01: "function myFunction() {}",
-    option02: "myFunction() {}",
-    option03: "declare myFunction() {}",
-    option04: "def myFunction() {}",
+    option01: "A. function myFunction() {}",
+    option02: "B. myFunction() {}",
+    option03: "C. declare myFunction() {}",
+    option04: "D. def myFunction() {}",
     answer:"A"
   },
   {
     question: "What method is used to add an element to the end of an array in JavaScript?)",
-    option01: "push()",
-    option02: "add()",
-    option03: "append()",
-    option04: "insert()",
+    option01: "A. push()",
+    option02: "B. add()",
+    option03: "C. append()",
+    option04: "D. insert()",
     answer:"A"
   },
   {
@@ -90,40 +93,25 @@ var questionBank = [
 ];
 
 localStorage.setItem("questionBank", JSON.stringify(questionBank));
-
-
 var lastGrade = JSON.parse(localStorage.getItem("questionBank"));
-
-
-console.log("This is a temp value " + lastGrade[0].question);
-console.log("This is a temp value " + lastGrade[0].option01);
-console.log("This prints out the length of questionBank " + lastGrade.length);
-/*
-
-document.getElementById("questionField").innerHTML = lastGrade[0].question;
-document.getElementById("answer-button-01").innerHTML = lastGrade[0].option01;
-document.getElementById("answer-button-02").innerHTML = lastGrade[0].option02;
-document.getElementById("answer-button-03").innerHTML = lastGrade[0].option03;
-document.getElementById("answer-button-04").innerHTML = lastGrade[0].option04;
-*/
-
-
-
 
 
 function startBattle(){
     console.log("Start Battle has been triggerd");
     gameSection01.style.display = "none";
     gameSection02.style.display = ""
+    headerBtn.style.display = "none";
+
     quizLogic();
+    countdown();
 }
 
 function quizLogic(){
+  
   if(currentQuestion < questionBank.length)
   {
     loadQestions();
   }else{
- 
     showScore();
   }
 }
@@ -139,40 +127,42 @@ function loadQestions(){
 }
 
 function showScore(){
+  clearInterval(timeInterval);
+    document.getElementById("scoreField").innerHTML = "Your final score is: " + timeLeft;
+    console.log("This is the time interval "+ timeLeft)
+    
     gameSection02.style.display = "none";
     gameSection03.style.display = "";
-    document.getElementById("scoreField").innerHTML = "Your final score is: " + scoreCounter;
+    
 }
-
-
 
 
 function showLeaderBoard(){
-  gameSection01.style.display = "none";
-
-  var highScores = {
-    playerName: highScoreName.value,
-    score: scoreCounter
-  };
   
-
-  savedHighScores.push(highScores)
-
-  localStorage.setItem("savedHighscores", JSON.stringify(savedHighScores));
-
-
-
+  gameSection01.style.display = "none";
   gameSection03.style.display = "none";
   gameSection04.style.display = "";
 
+  if (timeLeft === 100){
+    renderTodos();
+    return;
+  }
+  
 
+  var highScores = {
+    playerName: highScoreName.value,
+    score: timeLeft
+  };
+  
+  savedHighScores.push(highScores)
 
-  //storeTodos();
-  renderTodos();
+  localStorage.setItem("savedHighscores", JSON.stringify(savedHighScores));
+  if(savedHighScores.length > 0 ){
+    renderTodos();
+  }
+
+  
 }
-
-
-
 
 function gameReset(){
     gameSection01.style.display = ""
@@ -180,6 +170,9 @@ function gameReset(){
     gameSection03.style.display = "none";
     gameSection04.style.display = "none";
     currentQuestion = 0;
+    timeLeft = 100;
+    countdownText.textContent = "Hello 😬";
+    headerBtn.style.display = "";
 }
 
 
@@ -200,10 +193,12 @@ function setAnswerA(){
   {
     console.log("The value goes into the loop");
     currentQuestion++;
-    scoreCounter++;
+    questionNotification.textContent = "Correct";
     quizLogic();
   }else{
-    currentQuestion++
+    currentQuestion++;
+    questionNotification.textContent = "Wrong!";
+    decScore();
     quizLogic();
   }
 
@@ -216,10 +211,12 @@ function setAnswerB(){
   {
     console.log("The value goes into the loop");
     currentQuestion++;
-    scoreCounter++;
+    questionNotification.textContent = "Correct";
     quizLogic();
   }else{
     currentQuestion++;
+    questionNotification.textContent = "Wrong!";
+    decScore();
     quizLogic();
   }
   
@@ -232,10 +229,12 @@ function setAnswerC(){
   {
     console.log("Correct answer was selected");
     currentQuestion++;
-    scoreCounter++;
+    questionNotification.textContent = "Correct";
     quizLogic();
   }else{
     currentQuestion++;
+    questionNotification.textContent = "Wrong!";
+    decScore();
     quizLogic();
   }
 }
@@ -247,18 +246,43 @@ function setAnswerD(){
   {
     console.log("The value goes into the loop");
     currentQuestion++;
-    scoreCounter++;
+    questionNotification.textContent = "Correct";
     quizLogic();
+    
   }
     currentQuestion++;
+    questionNotification.textContent = "Wrong!";
+    decScore(); 
     quizLogic();
+    
+}
+
+function decScore(){
+  timeLeft = timeLeft - 10;
+  console.log("The answer was wrong minus 10 points")
 }
 
 
 
-//26 STU
+function countdown(){
+    timeInterval = setInterval(function(){
+    
+      if(timeLeft > 1)
+      {
+        countdownText.textContent = timeLeft + " seconds remaining";
+        timeLeft--;
+      }else if (timeLeft === 1){
+        countdownText.textContent = timeLeft + " second remaining";
+        timeLeft--;
+      } else {
+        countdownText.textContent = "";
+        clearInterval(timeInterval);
+        showScore()
+      }
 
+ },1000)
 
+}
 
 // The following function renders items in a todo list as <li> elements
 
