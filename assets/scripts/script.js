@@ -138,6 +138,10 @@ function showScore(){
 
 
 function showLeaderBoard(){
+
+  if(highScoreName.value ===""){
+    return;
+  }
   
   gameSection01.style.display = "none";
   gameSection03.style.display = "none";
@@ -171,7 +175,6 @@ function gameReset(){
     gameSection04.style.display = "none";
     currentQuestion = 0;
     timeLeft = 100;
-    countdownText.textContent = "Hello 😬";
     headerBtn.style.display = "";
 }
 
