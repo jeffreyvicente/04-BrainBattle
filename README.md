@@ -58,6 +58,8 @@ THEN I can save my initials and score
 
 View live preview hosted on [GitHub Pages](https://jeffreyvicente.github.io/04-brain-battle/)
 
+![alt text](/assets/images/Brain%20Battle.gif)
+
 
 ## Features
 
