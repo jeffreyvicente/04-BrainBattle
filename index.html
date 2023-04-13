@@ -8,43 +8,60 @@
     <title>Brain Battle 🧠⚔️</title>
 </head>
 
+<!-- HTML page header code start-->
 <header>
     <div class="navBar">
+        <!-- HTML for the high score button-->
         <div class = "left">
         <li><a class="text1" href ="javascript:void(0);" onclick="showLeaderBoard();" id="highBtnHeader" >View high scores</a></li>
-             
         </div>
+
+        <!-- HTML for the timer-->
         <div class = "right">
             <li><a class="text1"; id="countdownTimer">Hello 😬</a></li>
-
-
         </div>
     </div>
 </header>
+<!-- HTML page header code end-->
 
-
+<!-- START of the HTML body -->
 <body>
+     <!-- START of the Section 1 of the game -->
     <section class = "gameSection-1" >
         <div class= "gameCard">
             <p></p>
+             <!-- START of div that contains the contents of the card. -->
             <div class = "welcomeCard">
+                <!-- START card header -->
                 <h2>Coding Quiz Challenge</h2>
+                <!-- END card header -->
                 <p> Try to answer the following code-related questions within the time limit. <br>
                     Keep in mind that incorrect answers will penalize your score/time <br>
                     by ten seconds!
+                <!-- START of div that contains the button, that starts the game. -->
                 <div>
                     <button class = "btn" id="start-button"> Begin Battle </button>
                 </div>
             </div>
+            <!-- END of div that contains the contents of the card. -->
         </div>
     </section>
+    <!-- END of the Section 1 of the game -->
 
+    <!-- START of the Section 2 of the game -->
     <section class = "gameSection-2">
         <div class="gameCard">      
             <div class = "QuestionCard">
+                <!-- START card header -->
                 <h3 id = "questionNumber">Question #1</h3>
+                <!-- END card header -->
+
+                <!-- START question field -->
                 <p id="questionField">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita iure illum nemo quis molestias vel corporis, 
                     <br>culpa itaque explicabo corrupti eaque quae dolorum tempora est? Optio quia aliquam dolorem esse?</p>
+                <!-- END question field -->
+                
+                <!-- START of button section -->
                 <div>
                     <button class = "btn" id="answer-button-01"> Answer #1 </button>
                     <button class = "btn" id="answer-button-02"> Answer #2 </button>
@@ -52,51 +69,66 @@
                 <div>
                     <button class = "btn" id="answer-button-03"> Answer #3 </button>
                     <button class = "btn" id="answer-button-04"> Answer #4 </button>
-
                 </div>
+                <!-- END of button section -->
                 <hr>
                 <h3 id="questionNotification"></h3>
             </div>         
         </div>
     </section>
+    <!-- END of the Section 2 of the game -->
 
+    <!-- START of the Section 3 of the game -->
     <section class = "gameSection-3">
         <div class="gameCard">      
             <div class = "scoreCard">
+                <!-- START card header -->
                 <h3>Battle Completed!</h3>
+                <!-- END card header -->
+
+                <!-- START of p that displays the score.  -->
                 <p id="scoreField">Your final score is null.</p>
+                <!-- END of p that displays the score.  -->
                 
+                <!-- START of section that ask for user input  -->
                 <p>Enter initials: </p>
                 <input type="text" placeholder="Enter Name Here" id="nameField">
                 <button class = "btn" id="nameFieldBtn"> Submit</button>
-                
+                <!-- END of p that displays the score.  -->
+
             </div>         
         </div>
     </section>
+    <!-- END of the Section 3 of the game -->
 
+    <!-- START of the Section 4 of the game -->
     <section class = "gameSection-4">
         <div class="gameCard">      
             <div class = "leaderboardCard">
+                <!-- START card header -->
                 <h3>Battle High Scores!</h3>
-               
+                <!-- END card header -->
+
+                <!-- START card leadboard HTML -->
                 <ul id="leaderboardCardList"></ul>
+                <!-- END card leadboard HTML -->
 
-
+                <!-- START card button HTML -->
                 <button class = "btn" id="playAgainBtn"> Battle Again?</button>
-                
+                <!-- END card button HTML -->   
             </div>         
         </div>
     </section>
+    <!-- END of the Section 4 of the game -->
 
-
+    <!-- LINKING CSS file to HTML -->
    <script src="./assets/scripts/script.js"></script>
 </body>
-
+ <!-- END of the HTML BODY -->
     
- 
-
-
+ <!-- START of the HTML FOOTER -->
 <footer>
 
  </footer>
+  <!-- END of the HTML FOOTER -->
 </html>
