@@ -220,6 +220,7 @@ function gameReset(){
     //displays the high score button
     headerBtn.style.display = "";
     countdownText.style.display = "";
+    localStorage.setItem("savedHighscores", JSON.stringify(savedHighScores));
 }
 
 //AddEventListener code for all the answers and buttons on the card. 
