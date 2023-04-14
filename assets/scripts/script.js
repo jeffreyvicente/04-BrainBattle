@@ -161,6 +161,7 @@ function showScore(){
     //Hides the section 2 card an allows section 3 to show. 
     gameSection02.style.display = "none";
     gameSection03.style.display = "";
+    countdownText.style.display = "none";
 
     //Stops the timer. 
     clearInterval(timeInterval);
@@ -179,6 +180,7 @@ function showLeaderBoard(){
   gameSection01.style.display = "none";
   gameSection03.style.display = "none";
   gameSection04.style.display = "";
+  
 
   //will check if user pressed the view leaderboard button. 
   //will not push data to the high score array
@@ -217,6 +219,7 @@ function gameReset(){
     timeLeft = 100;
     //displays the high score button
     headerBtn.style.display = "";
+    countdownText.style.display = "";
 }
 
 //AddEventListener code for all the answers and buttons on the card. 
