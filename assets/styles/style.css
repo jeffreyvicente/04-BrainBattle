@@ -1,20 +1,31 @@
+/*
+Sets the default font for the page
+*/
 :root{
   --primary-font:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
+/*
+CSS styling for the whole page
+*/
 * {
   box-sizing: border-box;  
   margin: 0;
   padding: 0;
- 
 }
 
+/*
+CSS styling for the body and sets the font in the body. 
+*/
 body {
   height: 100%;
   font-family: var(--primary-font);
  
 }
 
+/*
+CSS styling for the header
+*/
 header {
 
     height: 75px;
@@ -24,6 +35,9 @@ header {
     
   }
 
+  /*
+CSS styling navBar in the header
+*/
 .navBar {
     overflow: hidden;
     position: relative;
@@ -32,7 +46,10 @@ header {
     align-items: center;
   
   }
-
+  
+/*
+CSS styling for the text in the nav bar. 
+*/
   .navBar .text1 {
     color: white;
     padding: 15px 35px;
@@ -41,28 +58,42 @@ header {
     font-weight: bold;
   }
 
+/*
+CSS styling for the left icon on the page
+*/
 .left {
     text-align: center;
     display: flex;
   }
   
+/*
+CSS styling for the right icon on the page
+*/
   .right {
     position: absolute;
     right: 20px;
     text-align: left;
   }
 
-
-  li {
+/*
+CSS styling for list for the text in the header
+*/
+li {
     list-style: none;
-  }
+}
 
 
 
-
+/*
+CSS styling for list for the body of the HTML
+*/
 body {
     background-color:white;
   }
+
+/*
+CSS styling for the buttons used in the HTML
+*/
 section button {
     color: white;
     background-color: #247BA0;
@@ -73,6 +104,9 @@ section button {
     width: 40%;
 }
 
+/*
+CSS styling for list for the game card in the HTML
+*/
 .gameCard{
     display: block;
     background-color:#f0ead6;
@@ -84,34 +118,47 @@ section button {
     border: 5px solid #f19c73;
 
 }
+
+/*
+CSS styling for section HTML
+*/
 .section {
     padding-top: 20px;
   }
-  
-  .card-contents {
+
+/*
+CSS styling for context in the card
+*/
+.card-contents {
     padding: 5px 5px 10px 5px;
   }
 
-  #nameField {
-    width: 30%;
-    padding: 12px 10px;
-    margin: 8px 8px;
-    box-sizing: border-box;
-    font-size: 18px;
-  }
+/*
+CSS styling for name field in the scorecard section
+*/
+#nameField {
+  width: 30%;
+  padding: 12px 10px;
+  margin: 8px 8px;
+  box-sizing: border-box;
+  font-size: 18px;
+}
 
-  h2,h3,p,li{
+/*
+CSS styling for comment elements in the HTML
+*/
+h2,h3,p,li{
     padding-bottom: 20px;
-  }
+}
 
-  p,ul{
+p,ul{
     font-size: 20px;
-  }
+}
 
-  h3{
+h3{
     font-size: 30px;
-  }
+}
 
-  h2{
+h2{
     font-size: 35px;
-  }
+}
